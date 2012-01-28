@@ -6,6 +6,7 @@ include 'login.php';
 ?>
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
 <link href="./css/login-box.css" rel="stylesheet" type="text/css" />
 <!--Fuentes ext js-->	
 <link rel="stylesheet" type="text/css" href="./lib/ext/resources/css/ext-all.css" />

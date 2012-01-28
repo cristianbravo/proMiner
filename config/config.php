@@ -3,7 +3,7 @@
 define('_DB_SERVER_', 'localhost');
 define('_DB_NAME_', 'proMiner');
 define('_DB_USER_', 'root');
-define('_DB_PASSWD_', '123456');
+define('_DB_PASSWD_', 'canival4');
 define('_PM_VERSION_', '1.0112');
 
 
