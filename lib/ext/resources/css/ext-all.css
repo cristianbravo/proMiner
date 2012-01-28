@@ -7020,6 +7020,12 @@ body.x-body-masked .x-window-plain .x-window-mc {
 /*
 UserIcons
 */
+.user_super_32 { 
+    background-image:url(../../../../img/icon/user_super32.png);
+}
+.user_super_16 { 
+    background-image:url(../../../../img/icon/user_super16.png);
+}
 .user_chanc_32 { 
     background-image:url(../../../../img/icon/user_chanc32.png);
 }
