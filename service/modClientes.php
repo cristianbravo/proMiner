@@ -44,6 +44,39 @@ if($accion=='getClientes') {
     mysql_free_result($result);
 } 
 
+if($accion=='getPtsExtraccion') {
+
+    $idCliente = $_REQUEST['idCliente'];
+    // contador
+    $result = mysql_query("SELECT COUNT(id) AS count FROM pm_pto_extraccion WHERE activo=1 AND id_cliente=".$idCliente)
+    or die ('Could not do count on table: ' . mysql_error());
+    $row = mysql_fetch_assoc($result);
+    $count = $row['count'];
+    
+    
+    $query = "SELECT * FROM pm_pto_extraccion WHERE activo=1 AND id_cliente=".$idCliente ;
+    
+    if($limit)
+        $query .= " LIMIT ".$start.",".$limit;
+    
+    
+    $result = mysql_query($query) or die("SQL Error 1: " . mysql_error());
+    while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+        $myPtsExtraccion[] = array(
+            'nombre' => $row['nombre'],
+            'direccion' => $row['direccion'],
+            'ncontacto' => $row['ncontacto'],
+            'telefono' => $row['telefono'],
+            'mail' => $row['mail'],
+            'id' => $row['id']
+            );
+    }
+
+    $myData = array('results' => $myPtsExtraccion, 'totalCount' => $count);
+    echo json_encode($myData);
+    mysql_free_result($result);
+} 
+
 /*
 * Devuelve datos del usuario
 */
@@ -108,6 +141,40 @@ if($accion=='setSaveClient'){
         echo "{failure:true,info:'Error al ingresar los datos'}";
 }
 
+if($accion=='savePtExtraccion'){
+
+    //datos normales
+    $nombre     = $_REQUEST['nombre'];
+    $direccion  = $_REQUEST['direccion'];
+    $ncontacto  = $_REQUEST['ncontacto'];
+    $telefono   = $_REQUEST['telefono'];
+    $mail       = $_REQUEST['mail'];
+    //id cliente
+    $idCliente  = $_REQUEST['idCliente'];
+
+    $query = "INSERT INTO pm_pto_extraccion (nombre,direccion,ncontacto,telefono,mail,id_cliente) VALUES ('{$nombre}','{$direccion}','{$ncontacto}','{$telefono}','{$mail}','{$idCliente}')"; 
+
+    if(mysql_query($query))
+        echo "{success:true,info:\"Registro guardado exitosamente\"}";
+    else
+        echo "{failure:true,info:'Error al ingresar los datos'}";
+}
+
+
+if($accion=='setDesactivatePtExtraccion'){
+    
+    //si viene el id, editaremos el usuario
+    $id         = $_REQUEST['id'];
+    
+    
+    $query = "UPDATE pm_pto_extraccion SET activo = 0";
+    $query.= " WHERE id=".$id;
+    
+    if(mysql_query($query))
+        echo "{success:true,info:\"Registro desactivado correctamente\"}";
+    else
+        echo "{failure:true,info:\"Error al desactivar los datos\"}";
+}
 if($accion=='setDesactivateClient'){
     
     //si viene el id, editaremos el usuario
