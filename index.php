@@ -18,7 +18,7 @@ include 'login.php';
 
 <!--comm js-->	
 <script type="text/javascript" src="./lib/com/prominer/common/common.js"></script>
-
+<script type="text/javascript" src="./lib/com/prominer/common/checkColumn.js"></script>
 
 <!-- Administracion -->
 <script type="text/javascript" src="./lib/com/prominer/administracion/home/panelModUsuarios.js"></script>
@@ -33,9 +33,11 @@ include 'login.php';
 
 <script type="text/javascript">Ext.BLANK_IMAGE_URL = "./lib/ext/resources/images/default/s.gif";</script> 
 <title>ProMiner BlackColt</title>
+
 </head>
 <body  style="background-color:#515e66" >
 <?php 
+
 if($_SESSION["log_ok"]=='ok'){
 echo <<<EOT
 <table align="center" cellspacing=0 cellpadding=0>
@@ -48,6 +50,7 @@ EOT;
 }else{
 	include 'tmpLogin.php';	
 }
+
 ?>
 </body>
 </html>
