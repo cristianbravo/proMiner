@@ -7044,6 +7044,18 @@ UserIcons
 .user_flot_16 { 
     background-image:url(../../../../img/icon/user_flot16.png);
 }
+.super_ini_lot_32 { 
+    background-image:url(../../../../img/icon/ini_lot_32.png);
+}
+.super_ini_lot_16 { 
+    background-image:url(../../../../img/icon/ini_lot_16.png);
+}
+.super_fin_lot_32 { 
+    background-image:url(../../../../img/icon/fin_lot_32.png);
+}
+.super_fin_lot_16 { 
+    background-image:url(../../../../img/icon/fin_lot_16.png);
+}
 /*
 Opciones
 */

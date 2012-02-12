@@ -26,6 +26,7 @@ include 'login.php';
 <!-- Usuario -->
 <script type="text/javascript" src="./lib/com/prominer/usuario/home/panelModChancado.js"></script>
 <script type="text/javascript" src="./lib/com/prominer/usuario/home/panelModFlotacion.js"></script>
+<script type="text/javascript" src="./lib/com/prominer/usuario/home/panelModMolienda.js"></script>
 <script type="text/javascript" src="./lib/com/prominer/usuario/home/panelModSupervisor.js"></script>
 <!-- Index -->
 <script type="text/javascript" src="./lib/com/prominer/index/panelBodyBar.js"></script>
